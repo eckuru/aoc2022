@@ -48,7 +48,7 @@ def main(part):
                 )
                 toMove = crates[srcCrate - 1][-1*amount:]
                 crates[srcCrate - 1] = crates[srcCrate - 1][:-1*amount]
-                [crates[dstCrate - 1].append(thing) for thing in toMove]
+                crates[dstCrate - 1] += toMove
     print(f'Part {part}')
     print(''.join([crate.pop() for crate in crates if crate]))
 
