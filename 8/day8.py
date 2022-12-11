@@ -19,10 +19,14 @@ def main():
             ):
                 treecount += 1
             scenicscore = 1
-            scenicscore *= argmin(height > data[i-1::-1, j]) + 1 if not all(height > data[i-1::-1, j]) else len(data[i-1::-1, j])
-            scenicscore *= argmin(height > data[i, j-1::-1]) + 1 if not all(height > data[i, j-1::-1]) else len(data[i, j-1::-1])
-            scenicscore *= argmin(height > data[i+1:, j]) + 1 if not all(height > data[i+1:, j]) else len(data[i+1:, j])
-            scenicscore *= argmin(height > data[i, j+1:]) + 1 if not all(height > data[i, j+1:]) else len(data[i, j+1:])
+            scenicscore *= argmin(height > data[i-1::-1, j]) + 1 if not all(
+                height > data[i-1::-1, j]) else len(data[i-1::-1, j])
+            scenicscore *= argmin(height > data[i, j-1::-1]) + 1 if not all(
+                height > data[i, j-1::-1]) else len(data[i, j-1::-1])
+            scenicscore *= argmin(height > data[i+1:, j]) + 1 if not all(
+                height > data[i+1:, j]) else len(data[i+1:, j])
+            scenicscore *= argmin(height > data[i, j+1:]) + 1 if not all(
+                height > data[i, j+1:]) else len(data[i, j+1:])
             if scenicscore > mostscenic:
                 mostscenic = scenicscore
 
